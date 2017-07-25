@@ -134,6 +134,18 @@ $footer_menu_4 = buildTree(wp_get_nav_menu_items('footer_menu_4'));
     </div>
 </div>
 
+<div class="popup-wrapper js-popup" data-popup="thanks">
+    <div class="popup">
+        <a href="#" class="popup__close js-close-popup"></a>
+        <div class="fw-grid fw-grid-15 fw-grid-30@m fw-grid-50@l">
+            <div class="fw-width-1-1 fw-width-2-5@m fw-flex fw-flex-column">
+                <p class="fw-fz-24 fw-font-medium fw-color-black fw-text-uppercase fw-line-height-1-2">Ваше обращение принято в обработку</p>
+                <p class="fw-font-light fw-fz-15 fw-color-black fw-mt-30 fw-line-height-1-2">Спасибо за обращение, наш менеджер свяжется с Вами в ближайшее время!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 wp_enqueue_script('custom', get_template_directory_uri() . '/js/common.js', true);
 wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vendor.js');
