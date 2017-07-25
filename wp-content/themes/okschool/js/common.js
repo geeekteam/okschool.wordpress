@@ -326,6 +326,9 @@
         // Do not use jQuery here cause external libs do not loads here...
 
         app.initSwitcher(); // data-switcher="{target: 'anything'}" , data-switcher-target="anything"
+        var currentUrl = window.location.href,
+            inputUrl = $('.wpcf7-form').find('.jq-url');
+        inputUrl.val(currentUrl);
     });
 
     app.appLoad('full', function () {
@@ -339,9 +342,19 @@
         $('.js-open-popup').click( function (e) {
             e.preventDefault();
 
-            var currentUrl = window.location.href,
-                inputUrl = $('.js-popup').find('.jq-url');
-            inputUrl.val(currentUrl);
+            var popup = $('.js-popup'),
+                errors = popup.find('span .wpcf7-not-valid-tip'),
+                validation = popup.find('.wpcf7-validation-errors'),
+                inputs = popup.find('.wpcf7-text');
+
+            if (errors.css('display') === 'block')
+                errors.remove();
+
+            if (validation.css('display') === 'block')
+                validation.remove();
+
+            if (inputs.val().length > 0)
+                inputs.val('');
         });
 
         var $whyUsCarousel = $('#why-us-carousel');
@@ -486,6 +499,7 @@
             var $form = $(this);
             var $nameInput = $form.find('input[name=your-name]');
             var $phoneInput = $form.find('input[name=phone]');
+            var $emailInput = $form.find('input[name=email]');
             $nameInput.removeClass('error-input');
             $phoneInput.removeClass('error-input');
 

@@ -19,6 +19,7 @@ span.wpcf7-not-valid-tip {
 div.wpcf7-mail-sent-ok {
     display: inline-block;
     background-color: #398f14;
+    color: #ffffff;
 }
 
 .wpcf7-form-control-wrap {
