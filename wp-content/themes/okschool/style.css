@@ -1,2 +1,30 @@
 @import "css/common.css";
 @import "css/vendor.css";
+
+span.wpcf7-not-valid-tip {
+    margin-top: 5px;
+    line-height: 1.2;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.wpcf7-validation-errors {
+    line-height: 1.2;
+    font-weight: 300;
+    font-size: 15px;
+    background: #f7e700;
+    display: inline-block;
+}
+
+div.wpcf7-mail-sent-ok {
+    display: inline-block;
+    background-color: #398f14;
+}
+
+.wpcf7-form-control-wrap {
+    width: 100%;
+}
+
+.wpcf7-response-output {
+    display: none;
+}

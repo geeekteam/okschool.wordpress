@@ -478,18 +478,20 @@
             app.popups().openPopup('popup-lightbox');
         });
 
-        $('[data-form-submit]').on('submit', function (e) {
+        $('.wpcf7-form').on('submit', function (e) {
             e.preventDefault();
 
             console.log('submit');
 
             var $form = $(this);
+            var $nameInput = $form.find('input[name=your-name]');
             var $phoneInput = $form.find('input[name=phone]');
+            $nameInput.removeClass('error-input');
             $phoneInput.removeClass('error-input');
 
             var $data = $form.serialize();
 
-            $.post('./quickstart.php', $data, function (response) {
+            $.post('/google_sheets/quickstart.php', $data, function (response) {
                 var res = JSON.parse(response);
 
                 if(res.success === true) {
